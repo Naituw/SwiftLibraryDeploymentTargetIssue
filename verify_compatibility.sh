@@ -20,7 +20,7 @@ DESTINATION_SWIFTMODULE_PATH="AppProject/StaticLibraryProject.swiftmodule"
 # Temporary build directory
 BUILD_OUTPUT_DIR="$(pwd)/BuildArtifacts"
 
-CONFIGURATION="Debug"
+CONFIGURATION="Release"
 
 # ------------------------------------------------------------------------------
 # 2. Switch to Xcode 26
