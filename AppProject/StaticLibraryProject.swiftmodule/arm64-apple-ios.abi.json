@@ -1,0 +1,289 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "StaticLibraryProject",
+    "printedName": "StaticLibraryProject",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "MyProtocol",
+        "printedName": "MyProtocol",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "someBool",
+            "printedName": "someBool",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20StaticLibraryProject10MyProtocolP8someBoolSbvp",
+            "mangledName": "$s20StaticLibraryProject10MyProtocolP8someBoolSbvp",
+            "moduleName": "StaticLibraryProject",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProject10MyProtocolP8someBoolSbvg",
+                "mangledName": "$s20StaticLibraryProject10MyProtocolP8someBoolSbvg",
+                "moduleName": "StaticLibraryProject",
+                "genericSig": "<τ_0_0 where τ_0_0 : StaticLibraryProject.MyProtocol>",
+                "sugared_genericSig": "<Self where Self : StaticLibraryProject.MyProtocol>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProject10MyProtocolP8someBoolSbvs",
+                "mangledName": "$s20StaticLibraryProject10MyProtocolP8someBoolSbvs",
+                "moduleName": "StaticLibraryProject",
+                "genericSig": "<τ_0_0 where τ_0_0 : StaticLibraryProject.MyProtocol>",
+                "sugared_genericSig": "<Self where Self : StaticLibraryProject.MyProtocol>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProject10MyProtocolP8someBoolSbvM",
+                "mangledName": "$s20StaticLibraryProject10MyProtocolP8someBoolSbvM",
+                "moduleName": "StaticLibraryProject",
+                "genericSig": "<τ_0_0 where τ_0_0 : StaticLibraryProject.MyProtocol>",
+                "sugared_genericSig": "<Self where Self : StaticLibraryProject.MyProtocol>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:20StaticLibraryProject10MyProtocolP",
+        "mangledName": "$s20StaticLibraryProject10MyProtocolP",
+        "moduleName": "StaticLibraryProject",
+        "declAttributes": [
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StaticLibraryProject",
+        "printedName": "StaticLibraryProject",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "someBool",
+            "printedName": "someBool",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20StaticLibraryProjectAAC8someBoolSbvp",
+            "mangledName": "$s20StaticLibraryProjectAAC8someBoolSbvp",
+            "moduleName": "StaticLibraryProject",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProjectAAC8someBoolSbvg",
+                "mangledName": "$s20StaticLibraryProjectAAC8someBoolSbvg",
+                "moduleName": "StaticLibraryProject",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProjectAAC8someBoolSbvs",
+                "mangledName": "$s20StaticLibraryProjectAAC8someBoolSbvs",
+                "moduleName": "StaticLibraryProject",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20StaticLibraryProjectAAC8someBoolSbvM",
+                "mangledName": "$s20StaticLibraryProjectAAC8someBoolSbvM",
+                "moduleName": "StaticLibraryProject",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StaticLibraryProject",
+                "printedName": "StaticLibraryProject.StaticLibraryProject",
+                "usr": "s:20StaticLibraryProjectAAC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20StaticLibraryProjectAACABycfc",
+            "mangledName": "$s20StaticLibraryProjectAACABycfc",
+            "moduleName": "StaticLibraryProject",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20StaticLibraryProjectAAC",
+        "mangledName": "$s20StaticLibraryProjectAAC",
+        "moduleName": "StaticLibraryProject",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MyProtocol",
+            "printedName": "MyProtocol",
+            "usr": "s:20StaticLibraryProject10MyProtocolP",
+            "mangledName": "$s20StaticLibraryProject10MyProtocolP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/wutian\/Developer\/SwiftDeploymentTargetIssue\/StaticLibraryProject\/StaticLibraryProject\/StaticLibraryProject.swift",
+      "kind": "BooleanLiteral",
+      "offset": 244,
+      "length": 4,
+      "value": "true"
+    }
+  ]
+}
