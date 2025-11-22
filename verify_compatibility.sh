@@ -20,10 +20,7 @@ DESTINATION_SWIFTMODULE_PATH="AppProject/StaticLibraryProject.swiftmodule"
 # Temporary build directory
 BUILD_OUTPUT_DIR="$(pwd)/BuildArtifacts"
 
-CONFIGURATION="Release"
-
-# Uncomment the following line can make the static library work for Xcode 16
-# STATIC_LIB_EXTRA_FLAGS='ENABLE_TESTABILITY=NO SWIFT_COMPILATION_MODE=wholemodule SWIFT_OPTIMIZATION_LEVEL=-O'
+CONFIGURATION="Debug"
 
 # ------------------------------------------------------------------------------
 # 2. Switch to Xcode 26
@@ -60,7 +57,6 @@ xcodebuild clean build \
     -destination "generic/platform=iOS" \
     -quiet \
     SYMROOT="$BUILD_OUTPUT_DIR" \
-    ${STATIC_LIB_EXTRA_FLAGS:-} \
     | grep -A 5 "(FAILURE|error:)" || echo "Build output suppressed (success expected)"
 
 # Check if the static library was created
