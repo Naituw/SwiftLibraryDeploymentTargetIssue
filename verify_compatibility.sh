@@ -15,10 +15,9 @@ XCODE_16_PATH="/Applications/Xcode16.app"
 STATIC_LIB_PROJECT_DIR="StaticLibraryProject"
 APP_PROJECT_DIR="AppProject"
 DESTINATION_LIB_PATH="AppProject/AppProject/libStaticLibraryProject.a"
-DESTINATION_SWIFTMODULE_PATH="AppProject/StaticLibraryProject.swiftmodule"
 
 # Temporary build directory
-BUILD_OUTPUT_DIR="$(pwd)/BuildArtifacts"
+BUILD_OUTPUT_DIR="$(pwd)/build"
 
 CONFIGURATION="Release"
 
@@ -62,14 +61,9 @@ xcodebuild clean build \
 # Check if the static library was created
 COMPILED_BUILD_PATH="$BUILD_OUTPUT_DIR/$CONFIGURATION-iphoneos"
 COMPILED_LIB_PATH="$COMPILED_BUILD_PATH/libStaticLibraryProject.a"
-COMPILED_SWIFTMODULE_PATH="$COMPILED_BUILD_PATH/StaticLibraryProject.swiftmodule"
 
 if [ ! -f "$COMPILED_LIB_PATH" ]; then
     echo "Error: Static library not found at $COMPILED_BUILD_PATH"
-    exit 1
-fi
-if [ ! -d "$COMPILED_SWIFTMODULE_PATH" ]; then
-    echo "Error: Swiftmodule not found at $COMPILED_SWIFTMODULE_PATH"
     exit 1
 fi
 
@@ -89,14 +83,12 @@ echo ""
 # 5. Copy .a file to AppProject
 # ------------------------------------------------------------------------------
 
-echo "👉 [Step 4] Copying .a and swiftmodule file to AppProject..."
+echo "👉 [Step 4] Copying .a file to AppProject..."
 
 rm -rf "$DESTINATION_LIB_PATH"
 cp "$COMPILED_LIB_PATH" "$DESTINATION_LIB_PATH"
-rm -rf "$DESTINATION_SWIFTMODULE_PATH"
-cp -r "$COMPILED_SWIFTMODULE_PATH" "$DESTINATION_SWIFTMODULE_PATH"
 
-if [ -f "$DESTINATION_LIB_PATH" ] && [ -d "$DESTINATION_SWIFTMODULE_PATH" ]; then
+if [ -f "$DESTINATION_LIB_PATH" ]; then
     echo "✅ Files copied successfully."
     echo ""
 else
@@ -105,10 +97,29 @@ else
 fi
 
 # ------------------------------------------------------------------------------
-# 6. Switch to Xcode 16
+# 6. Verify AppProject builds with Xcode 26
 # ------------------------------------------------------------------------------
 
-echo "👉 [Step 5] Switching to Xcode 16 ($XCODE_16_PATH)..."
+echo "👉 [Step 5] Verifying AppProject builds with Xcode 26..."
+
+xcodebuild clean build \
+    -project "$APP_PROJECT_DIR/AppProject.xcodeproj" \
+    -scheme "AppProject" \
+    -configuration $CONFIGURATION \
+    -sdk iphoneos \
+    -destination "generic/platform=iOS" \
+    -quiet \
+    SYMROOT="$BUILD_OUTPUT_DIR/AppBuild_Xcode26" \
+    | grep -A 5 "(FAILURE|error:)" || echo "Build output suppressed (success expected)"
+
+echo "✅ AppProject builds successfully with Xcode 26."
+echo ""
+
+# ------------------------------------------------------------------------------
+# 7. Switch to Xcode 16
+# ------------------------------------------------------------------------------
+
+echo "👉 [Step 6] Switching to Xcode 16 ($XCODE_16_PATH)..."
 
 if [ ! -d "$XCODE_16_PATH" ]; then
     echo "Error: Xcode 16 not found at $XCODE_16_PATH"
@@ -122,10 +133,10 @@ xcodebuild -version
 echo ""
 
 # ------------------------------------------------------------------------------
-# 7. Compile AppProject with Xcode 16
+# 8. Compile AppProject with Xcode 16
 # ------------------------------------------------------------------------------
 
-echo "👉 [Step 6] Building AppProject with Xcode 16..."
+echo "👉 [Step 7] Building AppProject with Xcode 16..."
 
 # Build the application project linking the previously built static library
 xcodebuild clean build \

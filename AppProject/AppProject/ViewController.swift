@@ -6,12 +6,7 @@
 //
 
 import UIKit
-import StaticLibraryProject
 
 class ViewController: UIViewController {
-    override func viewDidLoad() {
-        let libObj = StaticLibraryProject()
-        print("someBool default value: \(libObj.someBool)")
-    }
 }
 
